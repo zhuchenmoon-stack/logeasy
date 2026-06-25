@@ -1,0 +1,479 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "LogEaseNumber";
+  src: url("../字体库/Avenir Next.ttc") format("truetype-collection");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #131316;
+  font-family: "PingFang SC", "PingFangSC", "Microsoft YaHei", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+html,
+body,
+.app-scrollbar {
+  scrollbar-color: #767683 #17171a;
+  scrollbar-width: thin;
+}
+
+.app-scrollbar {
+  scrollbar-gutter: stable;
+}
+
+.day-mode .app-scrollbar {
+  scrollbar-color: #c8c8cf #ffffff;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+.app-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+html::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track,
+.app-scrollbar::-webkit-scrollbar-track {
+  background: #17171a;
+}
+
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb,
+.app-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #767683;
+  border-radius: 999px;
+  border: 2px solid #17171a;
+}
+
+.day-mode .app-scrollbar::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+.day-mode .app-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #c8c8cf;
+  border-color: #ffffff;
+}
+
+.threat-table-scrollbar {
+  scrollbar-color: #767683 transparent;
+  scrollbar-width: thin;
+}
+
+.threat-table-scrollbar::-webkit-scrollbar {
+  width: 2px;
+  height: 2px;
+}
+
+.threat-table-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.threat-table-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #767683;
+  border-radius: 999px;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+.day-hover-bg:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+.dark-hover-bg-4:hover {
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+.dark-hover-bg-8:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.day-mode [class*="text-[#f6f6f7]"],
+.day-mode [class*="text-[#F6F6F7]"] {
+  color: #323336 !important;
+}
+
+.day-mode [class*="text-[#4A4A50]"],
+.day-mode [class*="text-[#4a4a50]"] {
+  color: #bdbdc4 !important;
+}
+
+.day-mode [class*="text-[#767683]"],
+.day-mode [class*="text-[#767672]"] {
+  color: #a5a5b2 !important;
+}
+
+.day-mode [class*="text-[#adadb6]"],
+.day-mode [class*="text-[#ADADB6]"] {
+  color: #67686c !important;
+}
+
+.day-mode [class*="text-[#69696e]"],
+.day-mode [class*="text-[#69696E]"] {
+  color: #a5a5b2 !important;
+}
+
+.day-mode [class*="placeholder:text-[#4A4A50]"]::placeholder,
+.day-mode [class*="placeholder:text-[#4a4a50]"]::placeholder {
+  color: #bdbdc4 !important;
+}
+
+.day-mode [class*="placeholder:text-[#767683]"]::placeholder,
+.day-mode [class*="placeholder:text-[#767672]"]::placeholder {
+  color: #a5a5b2 !important;
+}
+
+.day-mode [class*="bg-[#131316]"] {
+  background-color: #f8f8f8 !important;
+}
+
+.day-mode [class*="bg-[#17171A]"],
+.day-mode [class*="bg-[#17171a]"],
+.day-mode [class*="bg-[#1B1B1F]"],
+.day-mode [class*="bg-[#1b1b1f]"],
+.day-mode [class*="bg-[#212126]"],
+.day-mode [class*="bg-[#28282E]"],
+.day-mode [class*="bg-[#28282e]"],
+.day-mode [class*="bg-[#4C4C59]"],
+.day-mode [class*="bg-[#4c4c59]"] {
+  background-color: #ffffff !important;
+}
+
+.day-mode [class*="bg-[#232328]"] {
+  background-color: #ebebeb !important;
+}
+
+.day-mode [class*="bg-[#30333C]"],
+.day-mode [class*="bg-[#30333c]"] {
+  background-color: #f2f2f2 !important;
+}
+
+.day-mode [class*="bg-[#34343E]"],
+.day-mode [class*="bg-[#34343e]"] {
+  background-color: #2d2d36 !important;
+}
+
+.day-mode [class*="bg-[#2D2D36]"],
+.day-mode [class*="bg-[#2d2d36]"] {
+  background-color: #17171c !important;
+}
+
+.day-mode [class*="bg-[rgba(255,255,255,0)]"] {
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+
+.day-mode [class*="bg-[rgba(255,255,255,0.02)]"] {
+  background-color: rgba(0, 0, 0, 0.02) !important;
+}
+
+.day-mode [class*="bg-[rgba(255,255,255,0.04)]"] {
+  background-color: rgba(0, 0, 0, 0.04) !important;
+}
+
+.day-mode [class*="bg-[rgba(255,255,255,0.08)]"] {
+  background-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+.day-mode [class*="bg-[rgba(255,255,255,0.12)]"] {
+  background-color: rgba(0, 0, 0, 0.12) !important;
+}
+
+.day-mode [class*="bg-[rgba(33,33,38,0.6)]"] {
+  background-color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.day-mode [class*="bg-[rgba(33,33,38,0.4)]"] {
+  background-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.day-mode [class*="bg-[rgba(33,33,38,0.2)]"] {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.day-mode [class*="bg-[rgba(53,102,236,0.32)]"] {
+  background-color: rgba(53, 102, 236, 0.32) !important;
+}
+
+.day-mode [class*="border-[#52525c]"],
+.day-mode [class*="border-[#52525C]"] {
+  border-color: #dfdfdf !important;
+}
+
+.day-mode [class*="border-[#71717c]"],
+.day-mode [class*="border-[#71717C]"] {
+  border-color: #b2b2b2 !important;
+}
+
+.day-mode [class*="border-[#232328]"] {
+  border-color: #ebebeb !important;
+}
+
+.day-mode [class*="border-[rgba(255,255,255,0.04)]"] {
+  border-color: rgba(0, 0, 0, 0.04) !important;
+}
+
+.day-mode [class*="border-[rgba(255,255,255,0.08)]"] {
+  border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+.day-mode [class*="hover:bg-[rgba(255,255,255,0.04)]"]:hover {
+  background-color: rgba(0, 0, 0, 0.04) !important;
+}
+
+.day-mode [class*="hover:bg-[rgba(255,255,255,0.08)]"]:hover {
+  background-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+.day-mode [data-state="default"],
+.day-mode [data-state="complete"] {
+  border-color: #dfdfdf !important;
+  background-color: rgba(255, 255, 255, 0.6) !important;
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.08) !important;
+}
+
+.day-mode [data-state="hover"] {
+  border-color: #b2b2b2 !important;
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.08) !important;
+}
+
+.day-mode [data-state="typing"] {
+  border-color: #3566ec !important;
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 0 0 2px rgba(53, 102, 236, 0.24) !important;
+}
+
+.day-mode [class*="bg-[#3566EC]"],
+.day-mode [class*="bg-[#3566ec]"],
+.day-mode [class*="from-[#6e93f8]"][class*="to-[#3566ec]"] {
+  color: #f6f6f7 !important;
+}
+
+.day-mode [class*="bg-[#3566EC]"] [class*="text-[#f6f6f7]"],
+.day-mode [class*="bg-[#3566ec]"] [class*="text-[#f6f6f7]"],
+.day-mode [class*="from-[#6e93f8]"][class*="to-[#3566ec]"] [class*="text-[#f6f6f7]"] {
+  color: #f6f6f7 !important;
+}
+
+.cascade-scrollbar {
+  scrollbar-color: #767683 transparent;
+  scrollbar-gutter: stable;
+  scrollbar-width: thin;
+}
+
+.cascade-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.cascade-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.cascade-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #767683;
+  border-radius: 999px;
+}
+
+.sidebar-scrollbar {
+  scrollbar-color: #767683 transparent;
+  scrollbar-width: thin;
+}
+
+.sidebar-scrollbar::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+.sidebar-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sidebar-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #767683;
+  border-radius: 999px;
+}
+
+.log-scrollbar {
+  scrollbar-width: none;
+}
+
+.log-scrollbar::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.log-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.log-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #767683;
+  border-radius: 999px;
+}
+
+.global-toast-motion {
+  transform-origin: top center;
+  will-change: opacity, transform, filter;
+  transition:
+    opacity 220ms ease,
+    transform 520ms cubic-bezier(0.16, 1, 0.3, 1),
+    filter 520ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.global-toast-motion[data-visible="false"] {
+  opacity: 0;
+  filter: blur(6px);
+  transform: translateY(-28px) scale(0.86);
+}
+
+.global-toast-motion[data-visible="true"] {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0) scale(1);
+}
+
+.search-skeleton-shimmer {
+  position: relative;
+  overflow: hidden;
+  background: var(--search-skeleton-bg, rgba(255, 255, 255, 0.06));
+}
+
+.search-skeleton-shimmer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-120%);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.08),
+    transparent
+  );
+  animation: search-skeleton-sweep 1400ms ease-in-out infinite;
+}
+
+@keyframes search-skeleton-sweep {
+  100% {
+    transform: translateX(120%);
+  }
+}
+
+.dashboard-card-breathe {
+  animation: dashboard-card-breathe 2s ease-in-out infinite;
+}
+
+@keyframes dashboard-card-breathe {
+  0%,
+  100% {
+    background-color: rgba(23, 23, 26, 0.84);
+  }
+
+  50% {
+    background-color: rgba(23, 23, 26, 0.72);
+  }
+}
+
+.dashboard-threat-buffer {
+  opacity: 0.001;
+  transform: translateY(-8px) scale(0.9);
+  transform-origin: top center;
+  backface-visibility: hidden;
+  contain: paint;
+  will-change: opacity, transform;
+}
+
+.dashboard-latest-threat-icon {
+  animation: dashboard-latest-threat-icon-spin 1.5s linear infinite;
+}
+
+@keyframes dashboard-latest-threat-icon-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.dashboard-threat-buffer [aria-hidden="true"] {
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+.dashboard-threat-buffer-enter {
+  animation: dashboard-threat-buffer-enter 300ms ease-in both;
+}
+
+.dashboard-threat-buffer [data-threat-glow="true"] {
+  opacity: 0;
+}
+
+.dashboard-threat-glow-settle [data-threat-glow="true"] {
+  animation: dashboard-threat-glow-enter 300ms ease-out both;
+}
+
+.dashboard-threat-visible-shift {
+  animation: dashboard-threat-visible-shift 300ms ease-in both;
+}
+
+.dashboard-threat-last-hidden {
+  opacity: 0;
+}
+
+@keyframes dashboard-threat-buffer-enter {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes dashboard-threat-glow-enter {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes dashboard-threat-visible-shift {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(44px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dashboard-card-breathe,
+  .dashboard-threat-buffer-enter,
+  .dashboard-threat-visible-shift {
+    animation: none;
+  }
+}
